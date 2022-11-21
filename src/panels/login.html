@@ -1,11 +1,11 @@
 <div class="login-content">
     <div class="login-card">
-        <p>Utilisez votre compte <span class="store">Minecraft</span> pour vous connectez au launcher.</p>
+        <p>Merci de vous connecter avec les identifiants du site.</p>
         <div class="login-type">
-            <button class="mojang login-type-btn">Mojang</button>
-            <button class="microsoft login-type-btn">Microsoft</button>
+            <button class="mojang login-type-btn">Connexion Web</button>
+            <button class="microsoft login-type-btn" style="display: none;">Compte Microsoft</button>
         </div>
-        <button class="cancel cancel-login" style="display: none;">Annuler</button>
+        <button class="cancel cancel-login" style="display: none;"><span>Annuler</span></button>
     </div>
 
     <div class="login-card-mojang">
@@ -13,7 +13,7 @@
             <small class="info-login">&nbsp;</small>
 
             <div class="login-card-mojang-input">
-                <label>Adresse mail</label>
+                <label>Pseudo</label>
                 <input type="text" class="Mail login-mojang-input" spellcheck="false">
                 <small class="error-mail">&nbsp;</small>
             </div>
@@ -25,13 +25,18 @@
             </div>
 
             <div class="login-options">
-                <span class="password-reset">Mot de passe oublié ?</span>
+                <a class="password-reset" target="_blank" href="http://zone-delta.fr/user/password/reset">Mot de
+                    passe oublié ?
+                </a>
+                <br>
+                <a class="new-user" target="_blank" href="http://zone-delta.fr/user/register">Pas de
+                    compte ?
+                </a>
                 <div class="btn-option-login">
-                    <button class="login-btn">Connexion</button>
+                    <button class="login-btn">Jouer</button>
                     <button class="cancel cancel-mojang">Annuler</button>
                 </div>
             </div>
         </div>
     </div>
-
 </div>

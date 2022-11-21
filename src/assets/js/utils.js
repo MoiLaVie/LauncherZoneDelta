@@ -1,7 +1,4 @@
-/**
- * @author Luuxis
- * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0/
- */
+ 
 
 import config from './utils/config.js';
 import database from './utils/database.js';
@@ -30,7 +27,7 @@ function addAccount(data) {
     div.classList.add("account");
     div.id = data.uuid;
     div.innerHTML = `
-        <img class="account-image" src="https://minotar.net/helm/${data.name}/100">
+        <img class="account-image" src="https://zone-delta.fr/api/skin-api/avatars/face/${data.name}">
         <div class="account-name">${data.name}</div>
         <div class="account-uuid">${data.uuid}</div>
         <div class="account-delete"><div class="icon-account-delete icon-account-delete-btn"></div></div>
@@ -46,8 +43,13 @@ function accountSelect(uuid) {
     if (activeAccount) activeAccount.classList.toggle('active-account');
     account.classList.add('active-account');
     headplayer(pseudo);
+    player(pseudo);
 }
 
 function headplayer(pseudo) {
-    document.querySelector(".player-head").style.backgroundImage = `url(https://minotar.net/helm/${pseudo}/100)`;
+    document.querySelector(".player-head").style.backgroundImage = `url(https://zone-delta.fr/api/skin-api/avatars/face/${pseudo})`;
+}
+
+function player(pseudo) {
+    document.querySelector(".player-name").innerText = pseudo;
 }

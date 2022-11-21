@@ -1,14 +1,9 @@
-/**
- * @author Luuxis
- * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0/
- */
-
 'use strict';
 
 import { logger, database, changePanel } from '../utils.js';
 
 const { Launch, Status } = require('minecraft-java-core');
-const { ipcRenderer } = require('electron');
+const { ipcRenderer, shell } = require('electron');
 const launch = new Launch();
 const pkg = require('../package.json');
 
@@ -25,8 +20,7 @@ class Home {
         this.initStatusServer();
         this.initBtn();
     }
-
-    async initNews() {
+    initNews() {
         let news = document.querySelector('.news-list');
         if (this.news) {
             if (!this.news.length) {
@@ -46,7 +40,7 @@ class Home {
                 news.appendChild(blockNews);
             } else {
                 for (let News of this.news) {
-                    let date = await this.getdate(News.publish_date)
+                    let date = this.getdate(News.publish_date)
                     let blockNews = document.createElement('div');
                     blockNews.classList.add('news-block');
                     blockNews.innerHTML = `
@@ -62,7 +56,8 @@ class Home {
                         <div class="news-content">
                             <div class="bbWrapper">
                                 <p>${News.content.replace(/\n/g, '</br>')}</p>
-                                <p class="news-author">Auteur,<span> ${News.author}</span></p>
+                              <div class="news-author"><img src="https://minotar.net/helm/${News.author}/100" style="width:30px;height:30px;"> 
+                              <p class="news-author"><span> ${News.author}</span></p>
                             </div>
                         </div>`
                     news.appendChild(blockNews);
@@ -117,7 +112,6 @@ class Home {
                 path: `${dataDirectory}/${process.platform == 'darwin' ? this.config.dataDirectory : `.${this.config.dataDirectory}`}`,
                 version: this.config.game_version,
                 detached: launcherSettings.launcher.close === 'close-all' ? false : true,
-                downloadFileMultiple: 10,
                 java: this.config.java,
                 javapath: javaPath.path,
                 args: [...javaArgs.args, ...this.config.game_args],
@@ -197,9 +191,38 @@ class Home {
         document.querySelector('.settings-btn').addEventListener('click', () => {
             changePanel('settings');
         });
+        document.querySelector('.player-head').addEventListener('click', () => {
+            changePanel('panelSkin');
+        });
+        document.querySelector('.Discord').addEventListener('click', () => {
+            this.openlink('https://discord.gg/UXyXyfdR5A');
+        })
+        // document.querySelector('.Twitter').addEventListener('click', () => {
+        //     this.openlink('https://twitter.com/');
+        // })
+        // document.querySelector('.Github').addEventListener('click', () => {
+        //     this.openlink('https://github.com/');
+        // })
+        document.querySelector('.Youtube').addEventListener('click', () => {
+            this.openlink('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+        })
+        // document.querySelector('.Instagram').addEventListener('click', () => {
+        //     this.openlink('https://www.instagram.com/');
+        // })
+        document.querySelector('.Twitch').addEventListener('click', () => {
+            this.openlink('https://www.twitch.tv/ambreae');
+        })
+        document.querySelector('.Website').addEventListener('click', () => {
+            this.openlink('https://www.zone-delta.fr');
+        })
+
     }
 
-    async getdate(e) {
+    openlink(url) {
+        shell.openExternal(url);
+    }
+
+    getdate(e) {
         let date = new Date(e)
         let year = date.getFullYear()
         let month = date.getMonth() + 1
