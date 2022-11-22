@@ -161,7 +161,8 @@
              let azAuth = new AZauth('https://zone-delta.fr');
  
              await azAuth.getAuth(mailInput.value, passwordInput.value).then(async account_connect => {
-                 
+
+
                  if (account_connect.error) {
                      cancelMojangBtn.disabled = false;
                      loginBtn.disabled = false;
@@ -177,7 +178,8 @@
                  //     console.log("A2F");
                  //     return
                  // }
- 
+
+                 
                  let account = {
                      access_token: account_connect.access_token,
                      client_token: account_connect.client_token,
@@ -189,7 +191,8 @@
                          offline: true
                      }
                  }
- 
+                 
+                 console.log(account.role)
                  this.database.add(account, 'accounts')
                  this.database.update({ uuid: "1234", selected: account.uuid }, 'accounts-selected');
  

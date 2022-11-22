@@ -191,9 +191,6 @@ class Home {
         document.querySelector('.settings-btn').addEventListener('click', () => {
             changePanel('settings');
         });
-        document.querySelector('.player-head').addEventListener('click', () => {
-            changePanel('panelSkin');
-        });
         document.querySelector('.Discord').addEventListener('click', () => {
             this.openlink('https://discord.gg/UXyXyfdR5A');
         })
@@ -203,15 +200,15 @@ class Home {
         // document.querySelector('.Github').addEventListener('click', () => {
         //     this.openlink('https://github.com/');
         // })
-        document.querySelector('.Youtube').addEventListener('click', () => {
-            this.openlink('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-        })
+        // document.querySelector('.Youtube').addEventListener('click', () => {
+        //     this.openlink('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+        // })
         // document.querySelector('.Instagram').addEventListener('click', () => {
         //     this.openlink('https://www.instagram.com/');
         // })
-        document.querySelector('.Twitch').addEventListener('click', () => {
-            this.openlink('https://www.twitch.tv/ambreae');
-        })
+        // document.querySelector('.Twitch').addEventListener('click', () => {
+        //     this.openlink('https://www.twitch.tv/ambreae');
+        // })
         document.querySelector('.Website').addEventListener('click', () => {
             this.openlink('https://www.zone-delta.fr');
         })
