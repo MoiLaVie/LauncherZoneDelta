@@ -1,11 +1,11 @@
 {
     "name": "ZoneDelta-Launcher",
     "preductname": "ZoneDelta Launcher",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "ZoneDelta Official Launcher",
     "main": "src/app.js",
     "author": "AmbreEAE",
-    "url": "http://151.80.119.160:666/",
+    "url": "http://82.165.254.251:666/",
     "engines": {
         "node": "16.x.x"
     },
