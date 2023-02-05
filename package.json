@@ -5,7 +5,7 @@
     "description": "ZoneDelta Official Launcher",
     "main": "src/app.js",
     "author": "AmbreEAE",
-    "url": "http://82.165.254.251:666/",
+    "url": "http://craftdium.ml/launcherSelvania",
     "engines": {
         "node": "16.x.x"
     },
@@ -32,6 +32,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/AmbEAE/LauncherZoneDelta.git"
+        "url": "git+https://github.com/MoiLaVie/LauncherZoneDelta.git"
     }
 }
